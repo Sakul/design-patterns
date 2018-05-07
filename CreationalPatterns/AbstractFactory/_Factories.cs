@@ -4,21 +4,21 @@ using System.Text;
 
 namespace AbstractFactory
 {
-    public abstract class FactoryBase
+    public interface IFactory
     {
-        public abstract ProductABase CreateProductA();
-        public abstract ProductBBase CreateProductB();
+        ProductABase CreateProductA();
+        ProductBBase CreateProductB();
     }
 
-    public class ConcreateFactory1 : FactoryBase
+    public class ConcreateFactory1 : IFactory
     {
-        public override ProductABase CreateProductA() => new ProductA1();
-        public override ProductBBase CreateProductB() => new ProductB1();
+        public ProductABase CreateProductA() => new ProductA1();
+        public ProductBBase CreateProductB() => new ProductB1();
     }
 
-    public class ConcreateFactory2 : FactoryBase
+    public class ConcreateFactory2 : IFactory
     {
-        public override ProductABase CreateProductA() => new ProductA2();
-        public override ProductBBase CreateProductB() => new ProductB2();
+        public ProductABase CreateProductA() => new ProductA2();
+        public ProductBBase CreateProductB() => new ProductB2();
     }
 }
